@@ -75,7 +75,7 @@ void patchModelFile() {
   }
 
   if (modified) {
-    file.writeAsStringSync(lines.join('\n').replace("localhostIp:8080/","localhostIp/"));
+    file.writeAsStringSync(lines.join('\n').replaceAll("localhostIp:8080/","localhostIp/"));
     print('Successfully updated valuesWithoutLocalhost in $filePath to include localhost.');
   } else {
     print('Warning: "valuesWithoutLocalhost" getter not found or could not be patched in $filePath.');
