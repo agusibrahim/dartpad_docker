@@ -1,4 +1,5 @@
 # Flutter Dartpad on Docker
+<img width="920" height="2064" alt="local_dartpad" src="https://github.com/user-attachments/assets/97537d3d-8761-49b7-b854-44946250336d" />
 
 This project allows you to run a local instance of Dartpad using Docker, with the ability to add your own custom packages to the `dart_services`
 
