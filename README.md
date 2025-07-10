@@ -1,4 +1,4 @@
-# Dartpad Docker with Custom Packages
+# Flutter Dartpad on Docker
 
 This project allows you to run a local instance of Dartpad using Docker, with the ability to add your own custom packages to the `dart_services`
 
