@@ -1,0 +1,12 @@
+:80 {
+    root * /usr/share/caddy/html
+    file_server
+    header {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+        Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+        Access-Control-Allow-Credentials "true"
+    }
+
+    try_files {path} {path}/ /index.html
+}

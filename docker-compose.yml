@@ -1,0 +1,32 @@
+services:
+  redis:
+    image: redis:latest
+    container_name: dartpad_redis
+    ports:
+      - "6379:6379"
+
+  dart_services:
+    build:
+      context: ./dart_services
+      dockerfile: Dockerfile
+      args:
+        PUB_PACKAGE: "intl,styled_widget"
+    container_name: dartpad_services
+    ports:
+      - "8084:8080"
+    depends_on:
+      - redis
+    environment:
+      DART_REDIS_URL: redis://redis:6379
+
+  dartpad_ui:
+    build:
+      context: ./dartpad_ui
+      dockerfile: Dockerfile
+      args:
+        DART_SERVICES_IP: "localhost:8084"
+    container_name: dartpad_ui
+    ports:
+      - "8066:80"
+    depends_on:
+      - dart_services
